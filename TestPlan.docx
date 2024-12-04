@@ -1,0 +1,78 @@
+The purpose of this test plan is to verify the correct functionality and performance. This test plan includes data validation of various critical scenarios based on the app's requirements.
+________________________________________
+ Objectives
+•	Ensure the search, filtering, and pagination features work as expected.
+•	Verify that the app properly displays selected contact details.
+•	Validate that the app handles multiple filters applied together.
+•	Ensure proper handling of invalid input and edge cases.
+________________________________________
+Test Data
+For testing purposes, the app will use the following sample data in the contactList.json:
+[
+  {
+    "firstName": "Rajeev",
+    "lastName": "Sharma",
+    "dob": "1986-02-12",
+    "address": "1001 Noble St Ste 1",
+    "city": "Fairbanks",
+    "state": "AK",
+    "zip": "99701",
+    "email": "rajeevsharma@gmail.com",
+    "phone": "2582528582"
+  },
+  {
+    "firstName": "Eesha",
+    "lastName": "Sharma",
+    "dob": "1995-07-04",
+    "address": "4821 Ridge Top Cir",
+    "city": "Anchorage",
+    "state": "AK",
+    "zip": "99506",
+    "email": "eeshasharma@gmail.com",
+    "phone": "2582528582"
+  },
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "dob": "1988-03-11",
+    "address": "1002 Elm St",
+    "city": "Anchorage",
+    "state": "AK",
+    "zip": "99501",
+    "email": "john.doe@gmail.com",
+    "phone": "2582528583"
+  },
+  {
+    "firstName": "Mary",
+    "lastName": "Jane",
+    "dob": "1992-05-16",
+    "address": "123 Birch St",
+    "city": "Fairbanks",
+    "state": "AK",
+    "zip": "99701",
+    "email": "maryjane@gmail.com",
+    "phone": "2582528584"
+  }
+]
+________________________________________
+Test Cases
+Test Case Description	Test Steps	Expected Result	Sample Data
+Verify contact list renders correctly.	1. Open the app. 
+2. Ensure that the contact list displays.	All contacts from the dataset should be listed.	Dataset has 4 contacts (Rajeev, Eesha, John, Mary)
+Verify contact filtering by first name.	1. Enter "Rajeev" in the First Name filter. 
+2. Press "Search".	Only "Rajeev Sharma" should appear.	Filters: firstName: "Rajeev"
+Verify pagination with multiple pages.	1. Ensure there are more than 5 contacts. 
+2. Test pagination functionality with the list of contacts.	Correct contacts are displayed per page with navigation between pages.	Example: 7 contacts (2 in the test data) + mock 5 additional records
+Verify the "Clear" button resets all filters.	1. Enter values in First Name, Last Name, and Email. 
+2. Press "Clear".	All filter fields should reset to empty.	Filters: firstName: "Rajeev", lastName: "Sharma", email: "rajeevsharma@..."
+Verify search results are filtered based on multiple criteria.	1. Enter "Sharma" in the Last Name filter. 
+2. Enter "Rajeev" in the First Name filter. 
+3. Press "Search".	Only "Rajeev Sharma" should be displayed.	Filters: lastName: "Sharma", firstName: "Rajeev"
+Verify that the correct contact details display when a contact is selected.	1. Click on the "Rajeev Sharma" contact. 
+2. Ensure that the contact details (address, email, phone, etc.) appear on the right side of the app.	"Rajeev Sharma" details should be shown (DOB, address, etc.).	Select: Rajeev Sharma
+Verify contact details panel clears when another contact is selected.	1. Select "Rajeev Sharma". 
+2. Select "Eesha Sharma". 
+3. Ensure the details for "Rajeev Sharma" disappear and "Eesha Sharma" details appear.	Details of the first contact should be replaced by the second contact's details.	Select: Rajeev Sharma, then Eesha Sharma
+Verify that the app does not allow invalid input (non-numeric phone number).	1. Enter "abcd1234" in the Phone number field. 
+2. Press "Search".	The app should return no results or an error message should appear.	Filters: phone: "abcd1234"
+
