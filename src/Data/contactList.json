@@ -1,1 +1,46 @@
-
+[
+  {
+    "firstName": "Rajeev",
+    "lastName": "Sharma",
+    "dob": "1986-02-12",
+    "address": "1001 Noble St Ste 1",
+    "city": "Fairbanks",
+    "state": "AK",
+    "zip": "99701",
+    "email": "rajeevsharma@gmail.com",
+    "phone": "2582528582"
+  },
+  {
+    "firstName": "Eesha",
+    "lastName": "Sharma",
+    "dob": "1995-07-04",
+    "address": "4821 Ridge Top Cir",
+    "city": "Anchorage",
+    "state": "AK",
+    "zip": "99506",
+    "email": "eeshasharma@gmail.com",
+    "phone": "2582528582"
+  },
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "dob": "1988-03-11",
+    "address": "1002 Elm St",
+    "city": "Anchorage",
+    "state": "AK",
+    "zip": "99501",
+    "email": "john.doe@gmail.com",
+    "phone": "2582528583"
+  },
+  {
+    "firstName": "Mary",
+    "lastName": "Jane",
+    "dob": "1992-05-16",
+    "address": "123 Birch St",
+    "city": "Fairbanks",
+    "state": "AK",
+    "zip": "99701",
+    "email": "maryjane@gmail.com",
+    "phone": "2582528584"
+  }
+]
